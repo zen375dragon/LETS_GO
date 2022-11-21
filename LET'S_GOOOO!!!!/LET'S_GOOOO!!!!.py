@@ -133,11 +133,11 @@ def button_thread():
         if button.value() == 0:
             for i in cat:
                 if i < 31:
-                    buzzer.duty_u16(0)            # 0% duty cycle
+                    buzzer.duty_u16(0)
                     utime.sleep(i)
                 else:
-                    buzzer.freq(i)                # set frequency (notes)
-                    buzzer.duty_u16(19660)        # 30% duty cycle
+                    buzzer.freq(i)
+                    buzzer.duty_u16(19660)
                     utime.sleep(0.15)
 _thread.start_new_thread(button_thread, ())
 
@@ -153,13 +153,13 @@ while True:
                     
             print("red")
             for i in range(NUM_LEDS):
-                ar[i] = 255<<8          # shift 8 bits to the left
+                ar[i] = 255<<8
             sm.put(ar,8)
             time.sleep_ms(820)
 
             print("green")
             for i in range(NUM_LEDS):
-                ar[i] = 255<<16         # shift 16 bits to the left
+                ar[i] = 255<<16
             sm.put(ar,8)
             time.sleep_ms(820)
 
